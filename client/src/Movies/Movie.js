@@ -29,13 +29,11 @@ export default function Movie(props) {
   if (!movie) {
     return <div>Loading movie information...</div>;
   }
-
-  const { title, director, metascore, stars } = movie;
-
+  
   return (
     <div className="save-wrapper">
       <MovieCard movie={movie} displayStars={true}/>
-      <div className="save-button">Save</div>
+      <div onClick={()=>props.addToSavedList(movieId)} className="save-button">Save</div>
     </div>
   );
 }
